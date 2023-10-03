@@ -30,7 +30,7 @@ If you can't use the `make` then exec the next commands:
 
     docker-compose up -d --build
 	docker-compose exec cli sh -c "cd dehn_technical_task/cli && composer install"
-    docker-compose exec cli sh -c "echo '{}' > dehn_technical_task/cli/files/json/tasks.json"
+    docker-compose exec cli sh -c "echo '{}' > dehn_technical_task/cli/files/json/task.json"
 	docker-compose exec --user 1000 cli bash -l
 
 Once inside the shell, you have to move to the project folder and the cli folder:
