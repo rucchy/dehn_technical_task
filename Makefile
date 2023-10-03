@@ -19,11 +19,11 @@ restart: ##Restart the docker
 remove:	##Remove the docker
 	docker-compose down
 shell:	##Enter in the shell of docker
-	docker-compose exec --user 1000 cli bash -l
+	docker-compose exec cli bash -l
 init:	##Build and run the docker, run the composer install and enter in the shell of docker
 	docker-compose up -d --build
 	docker-compose exec cli sh -c "cd dehn_technical_task/cli && composer install"
 	docker-compose exec cli sh -c "echo '{}' > dehn_technical_task/cli/files/json/task.json"
-	docker-compose exec --user 1000 cli bash -l
+	docker-compose exec cli bash -l
 
 

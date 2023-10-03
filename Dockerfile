@@ -10,6 +10,9 @@ RUN apt-get update && apt-get install -y \
  zip \
  unzip
 
+RUN useradd -ms /bin/bash  dehn
+USER dehn
+
 # Copy Composer from the official Composer image
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
