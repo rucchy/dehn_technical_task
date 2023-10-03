@@ -1,0 +1,25 @@
+{
+  "name": "vendor_name/dehn-technical-task",
+  "description": "Technical task for Dehn Digital Solution",
+  "minimum-stability": "stable",
+  "license": "Chema Ruano Fernández",
+  "authors": [
+    {
+      "name": "chema",
+      "email": "chemaruanof@gmail.com"
+    }
+  ],
+  "require": {
+    "symfony/console": "^6.3",
+    "symfony/uid": "^6.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Console\\": "src"
+    },
+    "classmap": ["src"]
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.3"
+  }
+}
