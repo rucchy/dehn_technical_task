@@ -5,6 +5,7 @@ help: # Show help
 build:	##Build and run the docker
 	docker-compose up -d --build
 	docker-compose exec cli sh -c "cd dehn_technical_task/cli && composer install"
+	docker-compose exec cli sh -c "echo '{}' > dehn_technical_task/cli/files/json/tasks.json"
 run: 	##Run the docker
 	docker-compose up -d
 composer-install: ##Run the composer install
@@ -22,6 +23,7 @@ shell:	##Enter in the shell of docker
 init:	##Build and run the docker, run the composer install and enter in the shell of docker
 	docker-compose up -d --build
 	docker-compose exec cli sh -c "cd dehn_technical_task/cli && composer install"
+	docker-compose exec cli sh -c "echo '{}' > dehn_technical_task/cli/files/json/tasks.json"
 	docker-compose exec --user 1000 cli bash -l
 
 

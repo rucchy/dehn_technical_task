@@ -25,11 +25,12 @@ If you have the command `make` available, there is a Makefile to set up the proj
 internal shell of the docker.
 
 ## How to run
-With command `make init` you will build and run the docker, execute the composer install and enter in the docker's shell.
+With command `make init` you will build and run the docker, execute the composer install, create a necessary file and enter in the docker's shell.
 If you can't use the `make` then exec the next commands:
 
     docker-compose up -d --build
 	docker-compose exec cli sh -c "cd dehn_technical_task/cli && composer install"
+    docker-compose exec cli sh -c "echo '{}' > dehn_technical_task/cli/files/json/tasks.json"
 	docker-compose exec --user 1000 cli bash -l
 
 Once inside the shell, you have to move to the project folder and the cli folder:
@@ -42,7 +43,8 @@ Of course all the commands can be executed outside the docker in this way e.g.:
 
     docker-compose exec cli sh -c "cd dehn_technical_task/cli && php bin/console app:create-task title description"
 
-And if you have the PHP 8.2 installed in your system, you can execute them like inside the docker shell
+And if you have the PHP 8.2 installed in your system, you can execute them like inside the docker shell, but you have to 
+execute the `composer install` and create the file `tasks.json` in `dehn_technical_task\cli\files\json`
 
 The four commands that are required for this technical task are:
 
