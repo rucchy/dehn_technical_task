@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Console\App\Command\Task\CreateTaskCommand;
+use Console\App\Command\Task\DeleteTaskCommand;
+use Console\App\Command\Task\ListTaskCommand;
+use Console\App\Command\Task\UpdateTaskCommand;
+use Console\App\Repository\TaskRepository;
+use Console\App\Utils\EntityManagerJson;
+use Console\App\Validator\TaskValidator;
+use Symfony\Component\Console\Application;
+
+try {
+    $app = new Application();
+    $entityManager = new EntityManagerJson();
+    $taskValidator = new TaskValidator();
+    $taskRepository = new TaskRepository($entityManager);
+
+    $app->add(new CreateTaskCommand($entityManager, $taskValidator));
+    $app->add(new ListTaskCommand($taskRepository));
+    $app->add(new DeleteTaskCommand($entityManager, $taskValidator, $taskRepository));
+    $app->add(new UpdateTaskCommand($entityManager, $taskValidator, $taskRepository));
+    $app->run();
+}catch(Exception $e){
+    //Should be sent to a log
+    echo 'Something goes wrong: ' .$e->getMessage();
+}
