@@ -1,0 +1,9 @@
+version: "2.0"
+
+services:
+  # PHP CLI
+  cli:
+    build: .
+    # OPTIONAL: Keeps code up to date for local development
+    volumes:
+     - ./:/usr/local/src/dehn_technical_task
