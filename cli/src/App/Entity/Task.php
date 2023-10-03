@@ -14,13 +14,6 @@ use Symfony\Component\Uid\UuidV4;
  */
 class Task implements EntityInterface, JsonSerializable
 {
-
-    /**
-     * Variable that contains the name of the file where we are going to store the tasks
-     *
-     * @var string
-     */
-    private string $nameFileToSave = "tasks";
     /**
      * @var Uuid
      */
@@ -153,14 +146,6 @@ class Task implements EntityInterface, JsonSerializable
     public function setStatus(TaskState $status): void
     {
         $this->status = $status;
-    }
-
-    /**
-     * @return string
-     */
-    public function getNameFileToSave(): string
-    {
-        return $this->nameFileToSave;
     }
 
     /**

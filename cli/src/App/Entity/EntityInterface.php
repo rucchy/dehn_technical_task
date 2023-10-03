@@ -10,12 +10,6 @@ use Symfony\Component\Uid\Uuid;
  */
 interface EntityInterface
 {
-    /**
-     * This method is required to know the name of the file where we are going to save the entities
-     *
-     * @return string
-     */
-    public function getNameFileToSave(): string;
 
     /**
      * This method is required to return the ID of the entities
