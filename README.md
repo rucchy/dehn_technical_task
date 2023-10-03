@@ -44,7 +44,7 @@ Of course all the commands can be executed outside the docker in this way e.g.:
     docker-compose exec cli sh -c "cd dehn_technical_task/cli && php bin/console app:create-task title description"
 
 And if you have the PHP 8.2 installed in your system, you can execute them like inside the docker shell, but you have to 
-execute the `composer install` and create the file `tasks.json` in `dehn_technical_task\cli\files\json`
+execute the `composer install` and create the file `task.json` in `dehn_technical_task\cli\files\json`
 
 The four commands that are required for this technical task are:
 
